@@ -1,0 +1,42 @@
+{% macro printList(lst) %}
+{% for item in lst %}
+{{ item }}{% if loop.nextitem is defined %}, {% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% macro menu_item(name, link) %}
+<li class="nav-item {% if name == title %}active{% endif %}"><a class="nav-link" href="{{ link }}">{{ name }}</a></li>
+{% endmacro %}
+
+{% macro buildMenu() %}
+{% for item in ["home", "about", "projects"] %}
+    {{ menu_item(item, "/" + item) }}
+{% endfor %}
+{% endmacro %}
+
+{% macro buildCarousel(id, lst) %}
+<div id="{{ id }}Carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for i in lst %}<li data-target="#{{ id }}Carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}">{% endfor %}
+    </ol>
+    <div class="carousel-inner">
+        {% for i in lst %}
+        <div class="carousel-item{% if loop.index0 == 0 %} active{% endif %}">
+            <img src="/img/default.png" class="d-block w-50">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>{{ i.title }}</h5>
+                <p>{{ i.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="carousel-control-prev" href="#{{ id }}Carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">previous</span>
+        </div>
+        <div class="carousel-control-next" href="#{{ id }}Carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">next</span>
+        </div>
+    </div>
+</div>
+{% endmacro %}

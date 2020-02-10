@@ -1,0 +1,31 @@
+{% from "functions.html" import printList %}
+{% extends "base.html" %}
+
+{% set title = "about" %}
+
+{% block body %}
+<div class="container">
+    <h3>Personal information</h3>
+    <p class="tab-8">
+        Name: {{ name }}<br>
+        Age: {{ age }}
+    </p>
+    <h3>Experience</h3>
+    <h4 class="tab-8">Languages</h4>
+    <h5 class="tab-16">Communication</h5>
+    <p class="tab-32">
+        Main: {{ comm_language_main }}<br>
+        Other: {{ printList(comm_languages) }}
+    </p>
+    <h5 class="tab-16">Programming</h5>
+    <p class="tab-32">{{ printList(prog_languages) }}</p>
+    <h4 class="tab-8">SDKs</h4>
+    <p class="tab-16">
+        {{ printList(sdks) }}
+    </p>
+    <h4 class="tab-8">IDEs</h4>
+    <p class="tab-16">
+        {{ printList(ides) }}
+    </p>
+</div>
+{% endblock %}

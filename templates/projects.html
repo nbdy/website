@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "functions.html" import buildCarousel %}
+{% set title = "projects" %}
+
+{% block body %}
+<div class="container">
+    {% for k, v in languages.items() %}
+    <h3 class="text-capitalize">{{ k }}</h3>
+    {{ buildCarousel(k, v) }}
+    <br>
+    {% endfor %}
+</div>
+{% endblock %}
+
