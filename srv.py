@@ -39,10 +39,13 @@ PROJECT_TEMPLATE_PARAMS = {
     "languages": {
         "python": [
             {"title": "carpy", "description": "infotainment system"},
-            {"title": "pwnpy", "description": "wardriving program"},
-            {"title": "adbSync", "description": "android sync tool"},
+            {"title": "pwnpy", "description": "wardriving program",
+             "show": '<a href="https://asciinema.org/a/299821" target="_blank"><img src="https://asciinema.org/a/299821.svg" /></a>'},
+            {"title": "adbSync", "description": "android sync tool",
+             "show": '<a href="https://asciinema.org/a/299825" target="_blank"><img src="https://asciinema.org/a/299825.svg" /></a>'},
             {"title": "pycorsproxy", "description": "cors proxy"},
-            {"title": "pybt", "description": "bluetooth library"},
+            {"title": "pybt", "description": "bluetooth library",
+             "show": '<a href="https://asciinema.org/a/299826" target="_blank"><img src="https://asciinema.org/a/299826.svg" /></a>'},
             {"title": "seleniumwrapper", "description": "as the name implies"},
             {"title": "wifuzz", "description": "wireless fuzzer"},
             {"title": "pyncddns", "description": "namecheap dyndns updater"},
@@ -60,8 +63,10 @@ PROJECT_TEMPLATE_PARAMS = {
         ],
         "cpp": [
             {"title": "carpi", "description": "infotainment system"},
-            {"title": "pwnpi", "description": "wardriving program"},
-            {"title": "deauthdetect", "description": "detects deauthentication 802.11 frames"},
+            {"title": "pwnpi", "description": "wardriving program",
+             "show": '<a href="https://asciinema.org/a/299834" target="_blank"><img src="https://asciinema.org/a/299834.svg" /></a>'},
+            {"title": "deauthdetect", "description": "detects deauthentication 802.11 frames",
+             "show": '<a href="https://asciinema.org/a/299838" target="_blank"><img src="https://asciinema.org/a/299838.svg" /></a>'},
             {"title": "mbtiles-cpp", "description": "mbtiles/mapbox vector tile reader/writer"},
             {"title": "raycons", "description": "icons drawn with raylib / for carpi"},
             {"title": "raygauge", "description": "gauges drawn with raylib / for carpi"}

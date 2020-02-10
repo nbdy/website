@@ -14,6 +14,7 @@
 {% endfor %}
 {% endmacro %}
 
+
 {% macro buildCarousel(id, lst) %}
 <div id="{{ id }}Carousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -22,7 +23,7 @@
     <div class="carousel-inner">
         {% for i in lst %}
         <div class="carousel-item{% if loop.index0 == 0 %} active{% endif %}">
-            <img src="/img/default.png" class="d-block w-50">
+            {% if i.show is defined %}{{ i.show }}{% else %}<img src="/img/default.png" class="d-block w-50">{% endif %}
             <div class="carousel-caption d-none d-md-block">
                 <h5>{{ i.title }}</h5>
                 <p>{{ i.description }}</p>
