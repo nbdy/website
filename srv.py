@@ -41,6 +41,7 @@ ABOUT_TEMPLATE_PARAMS = {
 }
 
 PROJECT_TEMPLATE_PARAMS = {
+    "urlPrefix": "https://github.com/smthnspcl/",
     "languages": {
         "python": [
             {"title": "carpy", "description": "infotainment system"},
