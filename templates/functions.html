@@ -15,8 +15,8 @@
 {% endmacro %}
 
 
-{% macro buildCarousel(id, lst) %}
-<div id="{{ id }}Carousel" class="carousel slide" data-ride="carousel">
+{% macro buildCarousel(id, lst, toggleable, active=False) %}
+<div id="{{ id }}Carousel" class="carousel slide{% if toggleable %}{% if active %}  collapse {% else %} show{% endif %}{% endif %}" data-ride="carousel">
     <ol class="carousel-indicators">
         {% for i in lst %}<li data-target="#{{ id }}Carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}">{% endfor %}
     </ol>

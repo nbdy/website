@@ -4,6 +4,7 @@ from sanic.response import text
 from datetime import datetime
 import jinja2
 import jinja2_sanic
+from sanic_babel import Babel
 
 
 # todo inform user that we are not using cookies
@@ -18,6 +19,10 @@ jinja2_sanic.setup(
     app,
     loader=jinja2.FileSystemLoader("templates")
 )
+
+app.jinja_env = jinja2_sanic.get_env(app)
+
+babel = Babel(app, "de", "utc")
 
 
 BASE_TEMPLATE_PARAMS = {
@@ -73,6 +78,20 @@ PROJECT_TEMPLATE_PARAMS = {
         ]
     }
 }
+
+
+@babel.localeselector
+def get_locale(req):
+    # todo get locale by cookie
+    languages = req.headers.get('accept-language')
+    if languages:
+        return languages.split(';')[0].split(',')[0].replace('-', '_')
+
+'''
+@babel.timezoneselector
+def get_timezone(req):
+    # todo get timezone by cookie
+'''
 
 
 @app.route("/robots.txt", methods=["GET"])
