@@ -23,9 +23,9 @@
     <div class="carousel-inner">
         {% for i in lst %}
         <div class="carousel-item{% if loop.index0 == 0 %} active{% endif %}">
-            {% if i.show is defined %}{{ i.show }}{% else %}<img src="/img/default.png" class="d-block w-50" style="width: 1366px; height: 470px;">{% endif %}
+            {% if i.show is defined %}{{ i.show }}{% else %}<img src="/img/default.png" class="d-block w-100" style="width: 1366px; height: 470px;">{% endif %}
             <div class="carousel-caption d-none d-md-block">
-                <h5>{{ i.title }}</h5>
+                <h5><a href="https://github.com/smthnspcl/{{ i.title }}">{{ i.title }}</a></h5>
                 <p>{{ i.description }}</p>
             </div>
         </div>
