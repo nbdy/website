@@ -26,11 +26,13 @@ babel = Babel(app, "de", "utc")
 
 
 BASE_TEMPLATE_PARAMS = {
-    "github_url": "https://github.com/smthnspcl"
+    "github_url": "https://github.com/smthnspcl",
+    "build_server": "https://build.eberlein.io"
 }
 
 ABOUT_TEMPLATE_PARAMS = {
     "github_url": BASE_TEMPLATE_PARAMS["github_url"],  # todo nicer way to do this?
+    "build_server": BASE_TEMPLATE_PARAMS["build_server"],
     "name": "Pascal Eberlein",
     "age": int((datetime.now() - datetime(1996, 10, 27)).days / 365),
     "comm_language_main": "German",
@@ -42,6 +44,8 @@ ABOUT_TEMPLATE_PARAMS = {
 
 PROJECT_TEMPLATE_PARAMS = {
     "urlPrefix": "https://github.com/smthnspcl/",
+    "github_url": BASE_TEMPLATE_PARAMS["github_url"],  # todo nicer way to do this?
+    "build_server": BASE_TEMPLATE_PARAMS["build_server"],
     "languages": {
         "python": [
             {"title": "carpy", "description": "infotainment system"},
