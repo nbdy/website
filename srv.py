@@ -5,8 +5,6 @@ from datetime import datetime
 import jinja2
 import jinja2_sanic
 
-
-# todo inform user that we are not using cookies
 # todo having keks with scrapers/bots
 
 
