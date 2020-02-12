@@ -1,4 +1,3 @@
 jinja2
 sanic
-sanic-babel
 jinja2-sanic
