@@ -1,0 +1,143 @@
+{
+  "github_url": "https://github.com/smthnspcl",
+  "build_server": "https://build.eberlein.io",
+  "template": {
+    "about": {
+      "name": "Pascal Eberlein",
+      "birthDate": "27.10.1996",
+      "birthDateFormat": "dd.mm.yyyy",
+      "comm_language_main": "German",
+      "comm_languages": [
+        "English"
+      ],
+      "prog_languages": [
+        "C++",
+        "Java",
+        "Python",
+        "JS",
+        "HTML",
+        "CSS",
+        "SCSS"
+      ],
+      "sdks": [
+        "Android",
+        "Tizen (4)",
+        "ESP-IDF",
+        "Arduino"
+      ],
+      "ides": [
+        "CLion",
+        "Android Studio",
+        "PyCharm",
+        "IntelliJ"
+      ]
+    },
+    "projects": {
+      "languages": {
+        "python": [
+          {
+            "title": "carpy",
+            "description": "infotainment system"
+          },
+          {
+            "title": "pwnpy",
+            "description": "wardriving program",
+            "show": "<a href='https://asciinema.org/a/299821' target='_blank'><img src='https://asciinema.org/a/299821.svg' /></a>"
+          },
+          {
+            "title": "adbSync",
+            "description": "android sync tool",
+            "show": "<a href='https://asciinema.org/a/299825' target='_blank'><img src='https://asciinema.org/a/299825.svg' /></a>"
+          },
+          {
+            "title": "pycorsproxy",
+            "description": "cors proxy"
+          },
+          {
+            "title": "pybt",
+            "description": "bluetooth library",
+            "show": "<a href='https://asciinema.org/a/299826' target='_blank'><img src='https://asciinema.org/a/299826.svg' /></a>"
+          },
+          {
+            "title": "seleniumwrapper",
+            "description": "as the name implies"
+          },
+          {
+            "title": "wifuzz",
+            "description": "wireless fuzzer"
+          },
+          {
+            "title": "pyncddns",
+            "description": "namecheap dyndns updater"
+          },
+          {
+            "title": "GlassCap",
+            "description": "pcap reader / file carver"
+          }
+        ],
+        "java": [
+          {
+            "title": "contactsync",
+            "description": "app / syncs contacts via bluetooth"
+          },
+          {
+            "title": "abt",
+            "description": "library / bluetooth helper"
+          },
+          {
+            "title": "contacts",
+            "description": "app / contacts app w/ encrypted storage"
+          },
+          {
+            "title": "adocs",
+            "description": "app / offline android documentation viewer"
+          },
+          {
+            "title": "debt",
+            "description": "app / track the debt of your coworkers / colleagues"
+          },
+          {
+            "title": "apyide",
+            "description": "app / python editor w/ syntax highlighting"
+          },
+          {
+            "title": "shopping",
+            "description": "app / shopping list for infinite stores"
+          },
+          {
+            "title": "bluepwn",
+            "description": "app / bluetooth wardriving"
+          }
+        ],
+        "cpp": [
+          {
+            "title": "carpi",
+            "description": "infotainment system"
+          },
+          {
+            "title": "pwnpi",
+            "description": "wardriving program",
+            "show": "<a href='https://asciinema.org/a/299834' target='_blank'><img src='https://asciinema.org/a/299834.svg' /></a>"
+          },
+          {
+            "title": "deauthdetect",
+            "description": "detects deauthentication 802.11 frames",
+            "show": "<a href='https://asciinema.org/a/299838' target='_blank'><img src='https://asciinema.org/a/299838.svg' /></a>"
+          },
+          {
+            "title": "mbtiles-cpp",
+            "description": "mbtiles/mapbox vector tile reader/writer"
+          },
+          {
+            "title": "raycons",
+            "description": "icons drawn with raylib / for carpi"
+          },
+          {
+            "title": "raygauge",
+            "description": "gauges drawn with raylib / for carpi"
+          }
+        ]
+      }
+    }
+  }
+}

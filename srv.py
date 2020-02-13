@@ -1,116 +1,78 @@
 from argparse import ArgumentParser
 from sanic import Sanic
 from sanic.response import text
+from dateutil import parser
 from datetime import datetime
+from os.path import isfile
 import jinja2
 import jinja2_sanic
+from json import load
 
 # todo having keks with scrapers/bots
 
 
-app = Sanic(__name__)
-app.static("/css", "./static/css")
-app.static("/js", "./static/js")
-app.static("/img", "./static/img")
-jinja2_sanic.setup(
-    app,
-    loader=jinja2.FileSystemLoader("templates")
-)
+class Server(object):
+    app = None
+    github_url = None
+    template_projects = None
+    template_about = None
+    template_home = None
 
+    def __init__(self, cfg):
+        self.app = Sanic(__name__)
+        self.app.static("/css", "./static/css")
+        self.app.static("/js", "./static/js")
+        self.app.static("/img", "./static/img")
+        jinja2_sanic.setup(
+            self.app,
+            loader=jinja2.FileSystemLoader("templates")
+        )
 
-BASE_TEMPLATE_PARAMS = {
-    "github_url": "https://github.com/smthnspcl",
-    "build_server": "https://build.eberlein.io"
-}
+        @self.app.route("/robots.txt", methods=["GET"])
+        async def robots(req):
+            return text("kek")
 
-ABOUT_TEMPLATE_PARAMS = {
-    "github_url": BASE_TEMPLATE_PARAMS["github_url"],  # todo nicer way to do this?
-    "build_server": BASE_TEMPLATE_PARAMS["build_server"],
-    "name": "Pascal Eberlein",
-    "age": int((datetime.now() - datetime(1996, 10, 27)).days / 365),
-    "comm_language_main": "German",
-    "comm_languages": ["English"],
-    "prog_languages": ["C++", "Java", "Python", "JS", "HTML", "CSS", "SCSS"],
-    "sdks": ["Android", "Tizen (4)", "ESP-IDF", "Arduino"],
-    "ides": ["CLion", "Android Studio", "PyCharm", "IntelliJ"]
-}
+        @self.app.route("/", methods=["GET"])
+        @jinja2_sanic.template("home.html")
+        async def root(req):
+            return self.template_home
 
-PROJECT_TEMPLATE_PARAMS = {
-    "urlPrefix": "https://github.com/smthnspcl/",
-    "github_url": BASE_TEMPLATE_PARAMS["github_url"],  # todo nicer way to do this?
-    "build_server": BASE_TEMPLATE_PARAMS["build_server"],
-    "languages": {
-        "python": [
-            {"title": "carpy", "description": "infotainment system"},
-            {"title": "pwnpy", "description": "wardriving program",
-             "show": '<a href="https://asciinema.org/a/299821" target="_blank"><img src="https://asciinema.org/a/299821.svg" /></a>'},
-            {"title": "adbSync", "description": "android sync tool",
-             "show": '<a href="https://asciinema.org/a/299825" target="_blank"><img src="https://asciinema.org/a/299825.svg" /></a>'},
-            {"title": "pycorsproxy", "description": "cors proxy"},
-            {"title": "pybt", "description": "bluetooth library",
-             "show": '<a href="https://asciinema.org/a/299826" target="_blank"><img src="https://asciinema.org/a/299826.svg" /></a>'},
-            {"title": "seleniumwrapper", "description": "as the name implies"},
-            {"title": "wifuzz", "description": "wireless fuzzer"},
-            {"title": "pyncddns", "description": "namecheap dyndns updater"},
-            {"title": "GlassCap", "description": "pcap reader / file carver"}
-        ],
-        "java": [
-            {"title": "contactsync", "description": "app / syncs contacts via bluetooth"},
-            {"title": "abt", "description": "library / bluetooth helper"},
-            {"title": "contacts", "description": "app / contacts app w/ encrypted storage"},
-            {"title": "adocs", "description": "app / offline android documentation viewer"},
-            {"title": "debt", "description": "app / track the debt of your coworkers / colleagues"},
-            {"title": "apyide", "description": "app / python editor w/ syntax highlighting"},
-            {"title": "shopping", "description": "app / shopping list for infinite stores"},
-            {"title": "bluepwn", "description": "app / bluetooth wardriving"}
-        ],
-        "cpp": [
-            {"title": "carpi", "description": "infotainment system"},
-            {"title": "pwnpi", "description": "wardriving program",
-             "show": '<a href="https://asciinema.org/a/299834" target="_blank"><img src="https://asciinema.org/a/299834.svg" /></a>'},
-            {"title": "deauthdetect", "description": "detects deauthentication 802.11 frames",
-             "show": '<a href="https://asciinema.org/a/299838" target="_blank"><img src="https://asciinema.org/a/299838.svg" /></a>'},
-            {"title": "mbtiles-cpp", "description": "mbtiles/mapbox vector tile reader/writer"},
-            {"title": "raycons", "description": "icons drawn with raylib / for carpi"},
-            {"title": "raygauge", "description": "gauges drawn with raylib / for carpi"}
-        ]
-    }
-}
+        @self.app.route("/index", methods=["GET"])
+        @jinja2_sanic.template("home.html")
+        async def index(req):
+            return self.template_home
 
+        @self.app.route("/home", methods=["GET"])
+        @jinja2_sanic.template("home.html")
+        async def home(req):
+            return self.template_home
 
-@app.route("/robots.txt", methods=["GET"])
-async def robots(req):
-    return text("kek")
+        @self.app.route("/about", methods=["GET"])
+        @jinja2_sanic.template("about.html")
+        async def about(req):
+            return self.template_about
 
+        @self.app.route("/projects", methods=["GET"])
+        @jinja2_sanic.template("projects.html")
+        async def projects(req):
+            return self.template_projects
 
-@app.route("/", methods=["GET"])
-@jinja2_sanic.template("home.html")
-async def root(req):
-    return BASE_TEMPLATE_PARAMS
+        self.template_home = {
+            "github_url": cfg["github_url"],
+            "build_server": cfg["build_server"]
+        }
 
+        self.template_about = self.template_home
+        self.template_about.update(cfg["template"]["about"])
+        self.template_about["age"] = int((datetime.now() - parser.parse(self.template_about["birthDate"])).days / 365)
+        self.template_projects = self.template_home
+        self.template_projects.update(cfg["template"]["projects"])
 
-@app.route("/index", methods=["GET"])
-@jinja2_sanic.template("home.html")
-async def index(req):
-    return BASE_TEMPLATE_PARAMS
-
-
-@app.route("/home", methods=["GET"])
-@jinja2_sanic.template("home.html")
-async def home(req):
-    return BASE_TEMPLATE_PARAMS
-
-
-@app.route("/about", methods=["GET"])
-@jinja2_sanic.template("about.html")
-async def about(req):
-    return ABOUT_TEMPLATE_PARAMS
-
-
-@app.route("/projects", methods=["GET"])
-@jinja2_sanic.template("projects.html")
-async def projects(req):
-    return PROJECT_TEMPLATE_PARAMS
+    def run(self):
+        if a.ssl_key is None and a.ssl_cert is None:
+            self.app.run(host=a.host, port=a.port, debug=a.debug)
+        else:
+            self.app.run(host=a.host, port=a.port, debug=a.debug, ssl={"cert": a.ssl_cert, "key": a.ssl_key})
 
 
 if __name__ == '__main__':
@@ -120,9 +82,10 @@ if __name__ == '__main__':
     ap.add_argument("-d", "--debug", action="store_true", help="debug or not")
     ap.add_argument("-sc", "--ssl-cert", default=None, type=str, help="ssl certificate")
     ap.add_argument("-sk", "--ssl-key", default=None, type=str, help="ssl key")
+    ap.add_argument("-c", "--config", default="config.json", help="configuration file")
     a = ap.parse_args()
-
-    if a.ssl_key is None and a.ssl_cert is None:
-        app.run(host=a.host, port=a.port, debug=a.debug)
-    else:
-        app.run(host=a.host, port=a.port, debug=a.debug, ssl={"cert": a.ssl_cert, "key": a.ssl_key})
+    if not isfile(a.config):
+        print("no config specified. exiting.")
+        exit()
+    s = Server(load(open(a.config)))
+    s.run()
