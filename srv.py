@@ -70,9 +70,9 @@ class Server(object):
 
     def run(self):
         if a.ssl_key is None and a.ssl_cert is None:
-            self.app.run(host=a.host, port=a.port, debug=a.debug)
+            self.app.run(a.host, a.port, debug=a.debug)
         else:
-            self.app.run(host=a.host, port=a.port, debug=a.debug, ssl={"cert": a.ssl_cert, "key": a.ssl_key})
+            self.app.run(a.host, a.port, debug=a.debug, ssl={"cert": a.ssl_cert, "key": a.ssl_key})
 
 
 if __name__ == '__main__':
