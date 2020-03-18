@@ -7,8 +7,22 @@ from os.path import isfile
 import jinja2
 import jinja2_sanic
 from json import load
+from random import randint, choices
 
-# todo having keks with scrapers/bots
+
+class Utils(object):
+    PATHS = ["~jeff", "cgi-bin", "tmp", "..", "wp-admin", ""]
+
+    @staticmethod
+    def generate_path(depth=4):
+        return '/'.join(choices(Utils.PATHS, k=depth))
+
+    @staticmethod
+    def generate_robots_txt(user_agent="*", lines=25, path_min_depth=1, path_max_path=6):
+        r = "User-agent: {0}\n".format(user_agent)
+        for _ in range(lines):
+            r += "Disallow: {0}\n".format(Utils.generate_path(randint(path_min_depth, path_max_path)))
+        return r
 
 
 class Server(object):
@@ -30,7 +44,7 @@ class Server(object):
 
         @self.app.route("/robots.txt", methods=["GET"])
         async def robots(req):
-            return text("kek")
+            return text(Utils.generate_robots_txt(req.headers.get("user-agent") or "*"))
 
         @self.app.route("/", methods=["GET"])
         @jinja2_sanic.template("home.html")

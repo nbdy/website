@@ -36,6 +36,22 @@
       "languages": {
         "python": [
           {
+            "title": "duckpy",
+            "description": "duckduckgo python search api"
+          },
+          {
+            "title": "steppy",
+            "description": "search jobs on stepstone via the cli"
+          },
+          {
+            "title": "docktor",
+            "description": "manage multiple tor docker containers"
+          },
+          {
+            "title": "selenium_docktor",
+            "description": "use docktor with selenium"
+          },
+          {
             "title": "carpy",
             "description": "infotainment system"
           },
@@ -135,6 +151,12 @@
           {
             "title": "raygauge",
             "description": "gauges drawn with raylib / for carpi"
+          }
+        ],
+        "kotlin": [
+          {
+            "title": "productEvaluation",
+            "description": "rating app for all products that have a barcode"
           }
         ]
       }
