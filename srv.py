@@ -11,7 +11,8 @@ from random import randint, choices
 
 
 class Utils(object):
-    PATHS = ["~jeff", "cgi-bin", "tmp", "..", "wp-admin", ""]
+    PATHS = ["~jeff", "cgi-bin", "tmp", "..", "wp-admin", "saucyfiles", "danger", "administration", "root", "images",
+             "~admin", "www", "html", ".git", "wp-content"]
 
     @staticmethod
     def generate_path(depth=4):
