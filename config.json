@@ -11,14 +11,15 @@
         "English"
       ],
       "prog_languages": [
+        "C",
         "C++",
+        "C#",
         "Java",
         "Kotlin",
         "Python",
         "JS",
         "HTML",
-        "CSS",
-        "SCSS"
+        "CSS"
       ],
       "sdks": [
         "Android",
@@ -30,7 +31,8 @@
         "CLion",
         "Android Studio",
         "PyCharm",
-        "IntelliJ"
+        "IntelliJ",
+        "Rider"
       ]
     },
     "projects": {
@@ -53,6 +55,10 @@
             "description": "use docktor with selenium"
           },
           {
+            "title": "gruvii",
+            "description": "music generation based on GRUV"
+          },
+          {
             "title": "carpy",
             "description": "infotainment system"
           },
@@ -69,6 +75,18 @@
           {
             "title": "pycorsproxy",
             "description": "cors proxy"
+          },
+          {
+            "title": "gpupassthroughsetup",
+            "description": "prepares your pc for forwarding a gpu to a kvm instance"
+          },
+          {
+            "title": "pyrunnable",
+            "description": "easily create threaded objects with some extra functionality"
+          },
+          {
+            "title": "pytwitter",
+            "description": "create twitter bots without needing an api key"
           },
           {
             "title": "pybt",
@@ -90,11 +108,15 @@
           {
             "title": "GlassCap",
             "description": "pcap reader / file carver"
+          },
+          {
+            "title": "pdftool",
+            "description": "merge pdf files with ease"
           }
         ],
         "java": [
           {
-            "title": "contactsync",
+            "title": "android_contactsync",
             "description": "app / syncs contacts via bluetooth"
           },
           {
@@ -102,7 +124,7 @@
             "description": "library / bluetooth helper"
           },
           {
-            "title": "contacts",
+            "title": "android_contacts",
             "description": "app / contacts app w/ encrypted storage"
           },
           {
