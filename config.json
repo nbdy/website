@@ -189,13 +189,15 @@
     "apps": {
       "productEvaluation": {
         "name": "productEvaluation",
-        "dl": "https://build.eberlein.io/job/android_productevaluation/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk",
-        "images": "/img/productEvaluation/"
+        "dl": "https://build.eberlein.io/job/android_productevaluation/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       },
       "adocs": {
         "name": "adocs",
-        "dl": "https://build.eberlein.io/job/android_adocs/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk",
-        "images": "/img/adocs/"
+        "dl": "https://build.eberlein.io/job/android_adocs/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+      },
+      "contacts": {
+        "name": "contacts",
+        "dl": "https://build.eberlein.io/job/android_contacts/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       }
     }
   }

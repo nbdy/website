@@ -93,7 +93,7 @@ class Server(object):
         self.template_about = self.template_home
 
         for k in cfg["template"]["apps"].keys():
-            _d = cfg["template"]["apps"][k]["images"]
+            _d = "/img/" + cfg["template"]["apps"][k]["name"] + "/"
             cfg["template"]["apps"][k]["images"] = list({"show": "<img src='%s' class='d-block w-100'>" % (_d + _)}
                                                         for _ in listdir("static" + _d))
 
