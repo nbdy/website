@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "functions.html" import buildCarousel with context %}
+{% set title = name %}
+
+{% block body %}
+<div class="container">
+    <h3>{{ name }}</h3>
+    &nbsp;
+    <a class="btn btn-primary" href="{{ dl }}">download</a>
+    <hr/>
+    <h4>screenshots</h4>
+    {{ buildCarousel("image", images, style="width: 30%;") }}
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-{% from "functions.html" import buildMenu with context %}
+{% from "functions.html" import buildMenu, buildNavDropdown with context %}
 <div class="container">
     <nav class="navbar navbar-dark navbar-expand-lg">
         <a class="navbar-brand" href="/index">eberlein.io</a>
@@ -10,9 +10,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 {{ buildMenu() }}
+                {{ buildNavDropdown("apps", "apps", apps, "/apps", "/apps/") }}
                 <li class="nav-item"><a class="nav-link" href="{{ github_url }}">github</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ build_server }}">build</a></li>
-                
             </ul>
         </div>
     </nav>

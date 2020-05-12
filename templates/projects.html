@@ -6,7 +6,7 @@
 <div class="container">
     {% for k,v in languages.items() %}
     <a class="btn btn-outline-dark btn-light" data-toggle="collapse" href="#{{ k }}Carousel" role="button" aria-expanded="false" aria-controls="{{ k }}Carousel">{{ k }}</a><br>
-    {{ buildCarousel(k, languages[k], True, loop.index0 != 0) }}
+    {{ buildCarousel(k, languages[k], True, loop.index0 != 0, "width: auto; height: 420px; overflow: hidden;") }}
     <br>
     {% endfor %}
 </div>

@@ -1,9 +1,10 @@
 from argparse import ArgumentParser
 from sanic import Sanic
-from sanic.response import text
+from sanic.response import text, redirect
 from dateutil import parser
 from datetime import datetime
 from os.path import isfile
+from os import listdir
 import jinja2
 import jinja2_sanic
 from json import load
@@ -28,10 +29,13 @@ class Utils(object):
 
 class Server(object):
     app = None
+
     github_url = None
-    template_projects = None
-    template_about = None
+
     template_home = None
+
+    def get_template(self, d):
+        return dict(self.template_home, **d)
 
     def __init__(self, cfg):
         self.app = Sanic(__name__)
@@ -65,23 +69,33 @@ class Server(object):
         @self.app.route("/about", methods=["GET"])
         @jinja2_sanic.template("about.html")
         async def about(req):
-            return self.template_about
+            return self.get_template(cfg["template"]["about"])
 
         @self.app.route("/projects", methods=["GET"])
         @jinja2_sanic.template("projects.html")
         async def projects(req):
-            return self.template_projects
+            return self.get_template(cfg["template"]["projects"])
+
+        @self.app.route("/apps/<path:path>", methods=["GET"])
+        @jinja2_sanic.template("app.html")
+        async def app(req, path):
+            if path in self.template_home["apps"]:
+                return self.get_template(cfg["template"]["apps"][path])
+            return redirect("/")
 
         self.template_home = {
             "github_url": cfg["github_url"],
-            "build_server": cfg["build_server"]
+            "build_server": cfg["build_server"],
+            "apps": cfg["template"]["apps"].keys(),
+            "age": int((datetime.now() - parser.parse(cfg["template"]["about"]["birthDate"])).days / 365)
         }
 
         self.template_about = self.template_home
-        self.template_about.update(cfg["template"]["about"])
-        self.template_about["age"] = int((datetime.now() - parser.parse(self.template_about["birthDate"])).days / 365)
-        self.template_projects = self.template_home
-        self.template_projects.update(cfg["template"]["projects"])
+
+        for k in cfg["template"]["apps"].keys():
+            _d = cfg["template"]["apps"][k]["images"]
+            cfg["template"]["apps"][k]["images"] = list({"show": "<img src='%s' class='d-block w-100'>" % (_d + _)}
+                                                        for _ in listdir("static" + _d))
 
     def run(self):
         if a.ssl_key is None and a.ssl_cert is None:

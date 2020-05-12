@@ -14,9 +14,18 @@
 {% endfor %}
 {% endmacro %}
 
+{% macro buildNavDropdown(id, text, lst, url, urlPrefix="/") %}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="{{ id }}NavDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ text }}</a>
+    <div class="dropdown-menu" aria-labelledby="{{ id }}NavDropdown">
+        {% for i in lst %}<a class="dropdown-item" href="{{ urlPrefix }}{{ i }}">{{ i }}</a>{% endfor %}
+    </div>
+</li>
 
-{% macro buildCarousel(id, lst, toggleable, active=False) %}
-<div id="{{ id }}Carousel" class="carousel slide{% if toggleable %}{% if active %}  collapse {% else %} show{% endif %}{% endif %}" data-ride="carousel">
+{% endmacro %}
+
+{% macro buildCarousel(id, lst, toggleable=False, active=False, style="") %}
+<div id="{{ id }}Carousel" class="carousel slide{% if toggleable %}{% if active %}  collapse {% else %} show{% endif %}{% endif %}" style="{{ style }}" data-ride="carousel">
     <ol class="carousel-indicators">
         {% for i in lst %}<li data-target="#{{ id }}Carousel" data-slide-to="{{ loop.index0 }}" class="{% if loop.index0 == 0 %}active{% endif %}">{% endfor %}
     </ol>

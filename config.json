@@ -35,6 +35,7 @@
         "Rider"
       ]
     },
+
     "projects": {
       "languages": {
         "python": [
@@ -182,6 +183,19 @@
             "description": "rating app for all products that have a barcode"
           }
         ]
+      }
+    },
+
+    "apps": {
+      "productEvaluation": {
+        "name": "productEvaluation",
+        "dl": "https://build.eberlein.io/job/android_productevaluation/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk",
+        "images": "/img/productEvaluation/"
+      },
+      "adocs": {
+        "name": "adocs",
+        "dl": "https://build.eberlein.io/job/android_adocs/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk",
+        "images": "/img/adocs/"
       }
     }
   }

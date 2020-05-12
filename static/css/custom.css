@@ -7,6 +7,11 @@
 .tab-32 {
   margin-left: 32px; }
 
+.carousel-caption {
+  position: absolute;
+  top: 36%;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
