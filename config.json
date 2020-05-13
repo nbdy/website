@@ -45,15 +45,15 @@
           },
           {
             "title": "steppy",
-            "description": "search jobs on stepstone via the cli"
+            "description": "search jobs on stepstone via the cli/code"
           },
           {
             "title": "docktor",
-            "description": "manage multiple tor docker containers"
+            "description": "manage multiple tor docker containers from a web api/code"
           },
           {
             "title": "selenium_docktor",
-            "description": "use docktor with selenium"
+            "description": "use docktor with selenium "
           },
           {
             "title": "gruvii",
@@ -61,11 +61,11 @@
           },
           {
             "title": "carpy",
-            "description": "infotainment system"
+            "description": "raspberry pi infotainment system with music player, basic voice control and rf broadcasting"
           },
           {
             "title": "pwnpy",
-            "description": "wardriving program",
+            "description": "tool, which collects details about all near devices with wifi/bluetooth to a sqlite database",
             "show": "<a href='https://asciinema.org/a/299821' target='_blank'><img src='https://asciinema.org/a/299821.svg' /></a>"
           },
           {
@@ -96,11 +96,11 @@
           },
           {
             "title": "seleniumwrapper",
-            "description": "as the name implies"
+            "description": "downloads the needed driver and provides a simpler api"
           },
           {
             "title": "wifuzz",
-            "description": "wireless fuzzer"
+            "description": "wireless fuzzer with adb support"
           },
           {
             "title": "pyncddns",
@@ -122,15 +122,15 @@
           },
           {
             "title": "abt",
-            "description": "library / bluetooth helper"
+            "description": "library / bluetooth helper functions"
           },
           {
             "title": "android_contacts",
-            "description": "app / contacts app w/ encrypted storage"
+            "description": "app / contacts app w/ encrypted storage and sync"
           },
           {
             "title": "adocs",
-            "description": "app / offline android documentation viewer"
+            "description": "app / offline android documentation downloader/viewer with a favourite function"
           },
           {
             "title": "debt",
@@ -145,14 +145,14 @@
             "description": "app / shopping list for infinite stores"
           },
           {
-            "title": "bluepwn",
+            "title": "android_bluepwn",
             "description": "app / bluetooth wardriving"
           }
         ],
         "cpp": [
           {
             "title": "carpi",
-            "description": "infotainment system"
+            "description": "customizable raspberry pi framebuffer infotainment system with a music player, gps, map viewer (&renderer), sidebar, a virtual keyboard and toast messages"
           },
           {
             "title": "pwnpi",
@@ -161,7 +161,7 @@
           },
           {
             "title": "deauthdetect",
-            "description": "detects deauthentication 802.11 frames",
+            "description": "detects de-authentication 802.11 frames",
             "show": "<a href='https://asciinema.org/a/299838' target='_blank'><img src='https://asciinema.org/a/299838.svg' /></a>"
           },
           {
@@ -198,6 +198,14 @@
       "contacts": {
         "name": "contacts",
         "dl": "https://build.eberlein.io/job/android_contacts/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+      },
+      "debt": {
+        "name": "debt",
+        "dl": "https://build.eberlein.io/job/android_debt/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+      },
+      "apyide": {
+        "name": "apyide",
+        "dl": "https://build.eberlein.io/job/android_apyide/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       }
     }
   }

@@ -37,6 +37,15 @@ class Server(object):
     def get_template(self, d):
         return dict(self.template_home, **d)
 
+    @staticmethod
+    def count_dict_list_items(d, k=None):
+        r = 0
+        if k is None:
+            k = d.keys()
+        for _ in k:
+            r += len(d[_])
+        return r
+
     def __init__(self, cfg):
         self.app = Sanic(__name__)
         self.app.static("/css", "./static/css")
@@ -87,7 +96,8 @@ class Server(object):
             "github_url": cfg["github_url"],
             "build_server": cfg["build_server"],
             "apps": cfg["template"]["apps"].keys(),
-            "age": int((datetime.now() - parser.parse(cfg["template"]["about"]["birthDate"])).days / 365)
+            "age": int((datetime.now() - parser.parse(cfg["template"]["about"]["birthDate"])).days / 365),
+            "projects": self.count_dict_list_items(cfg["template"]["projects"]["languages"])
         }
 
         self.template_about = self.template_home
