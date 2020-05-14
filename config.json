@@ -189,22 +189,27 @@
     "apps": {
       "productEvaluation": {
         "name": "productEvaluation",
+        "description": "used for rating different products in their category. written in kotlin. uses paperdb, splitties, fotoapparat and zxing.",
         "dl": "https://build.eberlein.io/job/android_productevaluation/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       },
       "adocs": {
         "name": "adocs",
+        "description": "download and view the android documentation. also has a favoring function.",
         "dl": "https://build.eberlein.io/job/android_adocs/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       },
       "contacts": {
         "name": "contacts",
+        "description": "contacts app which is able to encrypt its database with a specified password.",
         "dl": "https://build.eberlein.io/job/android_contacts/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       },
       "debt": {
         "name": "debt",
+        "description": "track the your/their debt of people around you.",
         "dl": "https://build.eberlein.io/job/android_debt/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       },
       "apyide": {
         "name": "apyide",
+        "description": "editor with code styling features",
         "dl": "https://build.eberlein.io/job/android_apyide/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       }
     }

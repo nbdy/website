@@ -88,8 +88,11 @@ class Server(object):
         @self.app.route("/apps/<path:path>", methods=["GET"])
         @jinja2_sanic.template("app.html")
         async def app(req, path):
+            print("se")
             if path in self.template_home["apps"]:
-                return self.get_template(cfg["template"]["apps"][path])
+                r = self.get_template(cfg["template"]["apps"][path])
+                print(r)
+                return r
             return redirect("/")
 
         self.template_home = {
