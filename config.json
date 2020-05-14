@@ -199,12 +199,12 @@
       },
       "contacts": {
         "name": "contacts",
-        "description": "contacts app which is able to encrypt its database with a specified password.",
+        "description": "contacts app which is able to encrypt its database, import from multiple sources and sync over bluetooth.",
         "dl": "https://build.eberlein.io/job/android_contacts/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       },
       "debt": {
         "name": "debt",
-        "description": "track the your/their debt of people around you.",
+        "description": "track the your/their debt of people around you. supports multiple currencies.",
         "dl": "https://build.eberlein.io/job/android_debt/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
       },
       "apyide": {
