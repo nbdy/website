@@ -4,6 +4,7 @@
   "template": {
     "about": {
       "name": "Pascal Eberlein",
+      "contact": "inquiry@eberlein.io",
       "birthDate": "27.10.1996",
       "birthDateFormat": "dd.mm.yyyy",
       "comm_language_main": "German",
