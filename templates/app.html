@@ -21,11 +21,13 @@
     </div>
 </div>
 <script>
-$('img').each(function() {
-    this.onclick = function () {
-        $('#img-modal-body').html("<img src='" + this.src + "' class='col-md-12' '>");
-        $('#img-modal').modal('show');
-    }
-})
+$(document).ready(function () {
+    $('img').each(function() {
+        this.onclick = function () {
+            $('#img-modal-body').html("<img src='" + this.src + "' class='col-md-12' '>");
+            $('#img-modal').modal('show');
+        }
+    });
+});
 </script>
 {% endblock %}
