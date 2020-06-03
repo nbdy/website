@@ -1,39 +1,371 @@
 [
     {
         "description": [
-            "rpi carputer / infotainment system"
+            "generate mac addresses by a prefix (which can be gotten by organization name or country code/name)"
         ],
         "details": {
             "languages": [
-                "c++",
-                "other"
+                "python"
             ],
             "libraries": {
-                "c++": [
-                    "libpthread",
-                    "libcurl",
-                    "libsndfile",
-                    "libao",
-                    "libgps",
-                    "libraylib",
-                    "libz",
-                    "libbz2",
-                    "libexpat",
-                    "libmpg123",
-                    "libbluetooth",
-                    "libicuuc",
-                    "libsqlite3",
-                    "libmapnik",
-                    "libpq",
-                    "libtins",
-                    "lib${PROTOBUF_LIBRARIES}",
-                    "libdl"
+                "python": [
+                    "pyoui",
+                    "loguru"
                 ]
             }
         },
-        "mainLanguage": "C++",
-        "name": "carpi",
-        "url": "https://github.com/smthnspcl/carpi"
+        "mainLanguage": "Python",
+        "name": "pymacgen",
+        "url": "https://github.com/smthnspcl/pymacgen"
+    },
+    {
+        "description": [
+            "lookup oui entries via mac, mac prefix, org name or country code"
+        ],
+        "details": {
+            "languages": [
+                "python"
+            ],
+            "libraries": {
+                "python": [
+                    "requests",
+                    "loguru",
+                    "pycountry"
+                ]
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "pyoui",
+        "url": "https://github.com/smthnspcl/pyoui"
+    },
+    {
+        "description": [
+            "wardriving tool"
+        ],
+        "details": {
+            "languages": [
+                "python",
+                "css",
+                "javascript",
+                "html",
+                "shell"
+            ],
+            "libraries": {
+                "python": [
+                    "gps",
+                    "netifaces",
+                    "scapy",
+                    "loguru",
+                    "dataset",
+                    "jinja2",
+                    "git+https://github.com/smthnspcl/pybt",
+                    "flask",
+                    "spidev",
+                    "Pillow"
+                ]
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "pwnpy",
+        "url": "https://github.com/smthnspcl/pwnpy"
+    },
+    {
+        "description": [
+            "bluetooth scanner w/ a convinient api"
+        ],
+        "details": {
+            "languages": [
+                "python"
+            ],
+            "libraries": {
+                "python": [
+                    "gps",
+                    "bluepy",
+                    "PyBluez",
+                    "gattlib"
+                ]
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "pybt",
+        "url": "https://github.com/smthnspcl/pybt"
+    },
+    {
+        "description": [
+            "threading.Thread wrapper with convenient functions"
+        ],
+        "details": {
+            "languages": [
+                "python"
+            ],
+            "libraries": {
+                "python": []
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "pyrunnable",
+        "url": "https://github.com/smthnspcl/pyrunnable"
+    },
+    {
+        "description": [
+            "micropython flash / upload tool"
+        ],
+        "details": {
+            "languages": [
+                "python",
+                "shell"
+            ],
+            "libraries": {
+                "python": []
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "upy_flasher",
+        "url": "https://github.com/smthnspcl/upy_flasher"
+    },
+    {
+        "description": [
+            "manage and run mutliple tor containers for multiple selenium instances"
+        ],
+        "details": {
+            "languages": [
+                "python",
+                "shell",
+                "dockerfile"
+            ],
+            "libraries": {
+                "python": [
+                    "stem",
+                    "sanic",
+                    "loguru",
+                    "psutil",
+                    "docker"
+                ]
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "docktor",
+        "url": "https://github.com/smthnspcl/docktor"
+    },
+    {
+        "description": [
+            "write twitter readonly bots without the twitter api"
+        ],
+        "details": {
+            "languages": [
+                "python"
+            ],
+            "libraries": {
+                "python": [
+                    "dataset",
+                    "loguru",
+                    "git+https://github.com/smthnspcl/seleniumwrapper",
+                    "git+https://github.com/WoLpH/python-progressbar"
+                ]
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "pytwitter",
+        "url": "https://github.com/smthnspcl/pytwitter"
+    },
+    {
+        "description": [
+            "find jobs on stepstone.de via the cli"
+        ],
+        "details": {
+            "languages": [
+                "python"
+            ],
+            "libraries": {
+                "python": [
+                    "beautifulsoup4",
+                    "requests",
+                    "progressbar2"
+                ]
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "steppy",
+        "url": "https://github.com/smthnspcl/steppy"
+    },
+    {
+        "description": [
+            "duckduckgo python api"
+        ],
+        "details": {
+            "languages": [
+                "python"
+            ],
+            "libraries": {
+                "python": [
+                    "user_agent",
+                    "beautifulsoup4"
+                ]
+            }
+        },
+        "mainLanguage": "Python",
+        "name": "duckpy",
+        "url": "https://github.com/smthnspcl/duckpy"
+    },
+    {
+        "description": [
+            "sync contacts via bluetooth"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.1.0",
+                    "com.github.smthnspcl:contacts:f99fb9f2c3",
+                    "com.github.smthnspcl:abt:c3d6ebddfc",
+                    "com.jakewharton:butterknife:10.2.1",
+                    "org.greenrobot:eventbus:3.2.0",
+                    "com.blankj:utilcodex:1.26.0"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "android_contactsync",
+        "url": "https://github.com/smthnspcl/android_contactsync"
+    },
+    {
+        "description": [
+            "android offline documentation viewer"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.1.0",
+                    "com.jakewharton:butterknife:10.2.1",
+                    "com.blankj:utilcodex:1.26.0",
+                    "com.liulishuo.filedownloader:library:1.7.7",
+                    "org.greenrobot:eventbus:3.1.1"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "adocs",
+        "url": "https://github.com/smthnspcl/adocs"
+    },
+    {
+        "description": [
+            "shopping list app for multiple stores"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.1.0",
+                    "com.jakewharton:butterknife:10.2.1",
+                    "com.blankj:utilcodex:1.26.0",
+                    "io.realm:android-adapters:3.1.0",
+                    "org.greenrobot:eventbus:3.2.0",
+                    "com.google.android.material:material:1.2.0-beta01"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "android_shopping",
+        "url": "https://github.com/smthnspcl/android_shopping"
+    },
+    {
+        "description": [
+            "app to track the ratings of tasted bacon"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.0.0",
+                    "io.realm:android-adapters:3.1.0",
+                    "com.jakewharton:butterknife:10.2.1",
+                    "com.journeyapps:zxing-android-embedded:3.6.0{transitive=false}",
+                    "com.google.zxing:core:3.3.0",
+                    "org.greenrobot:eventbus:3.1.1"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "android_baconevaluation",
+        "url": "https://github.com/smthnspcl/android_baconevaluation"
+    },
+    {
+        "description": [
+            "app to track the debt of your coworkers and collegues"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.1.0",
+                    "io.paperdb:paperdb:2.6",
+                    "com.jakewharton:butterknife:10.2.1",
+                    "org.greenrobot:eventbus:3.1.1"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "android_debt",
+        "url": "https://github.com/smthnspcl/android_debt"
+    },
+    {
+        "description": [
+            "a(ndroid) py(thon) ide"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.1.0",
+                    "com.jakewharton:butterknife:10.2.1",
+                    "io.paperdb:paperdb:2.6",
+                    "com.larswerkman:HoloColorPicker:1.5",
+                    "org.greenrobot:eventbus:3.1.1",
+                    "com.blankj:utilcodex:1.26.0"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "apyide",
+        "url": "https://github.com/smthnspcl/apyide"
+    },
+    {
+        "description": [
+            "hommage to beerwithme"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.0.0",
+                    "com.lxj:xpopup:1.8.9",
+                    "com.jakewharton:butterknife:10.1.0",
+                    "com.google.firebase:firebase-messaging:20.0.0",
+                    "com.google.firebase:firebase-analytics:17.2.0",
+                    "com.google.firebase:firebase-auth:19.0.0",
+                    "com.firebaseui:firebase-ui-auth:5.1.0",
+                    "com.firebaseui:firebase-ui-firestore:5.1.0"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "teawithme_android",
+        "url": "https://github.com/smthnspcl/teawithme_android"
     },
     {
         "description": [
@@ -71,72 +403,39 @@
     },
     {
         "description": [
-            "hommage to beerwithme"
+            "rpi carputer / infotainment system"
         ],
         "details": {
             "languages": [
-                "java"
+                "c++",
+                "other"
             ],
             "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.0.0",
-                    "com.lxj:xpopup:1.8.9",
-                    "com.jakewharton:butterknife:10.1.0",
-                    "com.google.firebase:firebase-messaging:20.0.0",
-                    "com.google.firebase:firebase-analytics:17.2.0",
-                    "com.google.firebase:firebase-auth:19.0.0",
-                    "com.firebaseui:firebase-ui-auth:5.1.0",
-                    "com.firebaseui:firebase-ui-firestore:5.1.0"
+                "c++": [
+                    "libpthread",
+                    "libcurl",
+                    "libsndfile",
+                    "libao",
+                    "libgps",
+                    "libraylib",
+                    "libz",
+                    "libbz2",
+                    "libexpat",
+                    "libmpg123",
+                    "libbluetooth",
+                    "libicuuc",
+                    "libsqlite3",
+                    "libmapnik",
+                    "libpq",
+                    "libtins",
+                    "lib${PROTOBUF_LIBRARIES}",
+                    "libdl"
                 ]
             }
         },
-        "mainLanguage": "Java",
-        "name": "teawithme_android",
-        "url": "https://github.com/smthnspcl/teawithme_android"
-    },
-    {
-        "description": [
-            "a(ndroid) py(thon) ide"
-        ],
-        "details": {
-            "languages": [
-                "java"
-            ],
-            "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.1.0",
-                    "com.jakewharton:butterknife:10.2.1",
-                    "io.paperdb:paperdb:2.6",
-                    "com.larswerkman:HoloColorPicker:1.5",
-                    "org.greenrobot:eventbus:3.1.1",
-                    "com.blankj:utilcodex:1.26.0"
-                ]
-            }
-        },
-        "mainLanguage": "Java",
-        "name": "apyide",
-        "url": "https://github.com/smthnspcl/apyide"
-    },
-    {
-        "description": [
-            "app to track the debt of your coworkers and collegues"
-        ],
-        "details": {
-            "languages": [
-                "java"
-            ],
-            "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.1.0",
-                    "io.paperdb:paperdb:2.6",
-                    "com.jakewharton:butterknife:10.2.1",
-                    "org.greenrobot:eventbus:3.1.1"
-                ]
-            }
-        },
-        "mainLanguage": "Java",
-        "name": "android_debt",
-        "url": "https://github.com/smthnspcl/android_debt"
+        "mainLanguage": "C++",
+        "name": "carpi",
+        "url": "https://github.com/smthnspcl/carpi"
     },
     {
         "description": [
@@ -164,93 +463,19 @@
     },
     {
         "description": [
-            "sync contacts via bluetooth"
+            "easily sync/backup your phone's fs"
         ],
         "details": {
             "languages": [
-                "java"
+                "python"
             ],
             "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.1.0",
-                    "com.github.smthnspcl:contacts:f99fb9f2c3",
-                    "com.github.smthnspcl:abt:c3d6ebddfc",
-                    "com.jakewharton:butterknife:10.2.1",
-                    "org.greenrobot:eventbus:3.1.1",
-                    "com.blankj:utilcodex:1.26.0"
-                ]
+                "python": []
             }
         },
-        "mainLanguage": "Java",
-        "name": "android_contactsync",
-        "url": "https://github.com/smthnspcl/android_contactsync"
-    },
-    {
-        "description": [
-            "ocr on blood pressure monitors to log the data"
-        ],
-        "details": {
-            "languages": [
-                "java"
-            ],
-            "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.0.0",
-                    "com.blankj:utilcodex:1.26.0",
-                    "com.rmtheis:tess-two:9.0.0",
-                    "com.jakewharton:butterknife:10.2.1"
-                ]
-            }
-        },
-        "mainLanguage": "Java",
-        "name": "android_bloodpressure",
-        "url": "https://github.com/smthnspcl/android_bloodpressure"
-    },
-    {
-        "description": [
-            "app to track the ratings of tasted bacon"
-        ],
-        "details": {
-            "languages": [
-                "java"
-            ],
-            "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.0.0",
-                    "io.realm:android-adapters:3.1.0",
-                    "com.jakewharton:butterknife:10.2.1",
-                    "com.journeyapps:zxing-android-embedded:3.6.0{transitive=false}",
-                    "com.google.zxing:core:3.3.0",
-                    "org.greenrobot:eventbus:3.1.1"
-                ]
-            }
-        },
-        "mainLanguage": "Java",
-        "name": "android_baconevaluation",
-        "url": "https://github.com/smthnspcl/android_baconevaluation"
-    },
-    {
-        "description": [
-            "shopping list app for multiple stores"
-        ],
-        "details": {
-            "languages": [
-                "java"
-            ],
-            "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.0.0",
-                    "com.jakewharton:butterknife:10.2.1",
-                    "com.blankj:utilcodex:1.26.0",
-                    "io.realm:android-adapters:3.1.0",
-                    "org.greenrobot:eventbus:3.1.1",
-                    "com.google.android.material:material:1.2.0-alpha03"
-                ]
-            }
-        },
-        "mainLanguage": "Java",
-        "name": "android_shopping",
-        "url": "https://github.com/smthnspcl/android_shopping"
+        "mainLanguage": "Python",
+        "name": "adbSync",
+        "url": "https://github.com/smthnspcl/adbSync"
     },
     {
         "description": [
@@ -280,6 +505,27 @@
     },
     {
         "description": [
+            "ocr on blood pressure monitors to log the data"
+        ],
+        "details": {
+            "languages": [
+                "java"
+            ],
+            "libraries": {
+                "java": [
+                    "com.google.android.material:material:1.0.0",
+                    "com.blankj:utilcodex:1.26.0",
+                    "com.rmtheis:tess-two:9.0.0",
+                    "com.jakewharton:butterknife:10.2.1"
+                ]
+            }
+        },
+        "mainLanguage": "Java",
+        "name": "android_bloodpressure",
+        "url": "https://github.com/smthnspcl/android_bloodpressure"
+    },
+    {
+        "description": [
             "a casing for the Anycubic Predator"
         ],
         "details": {
@@ -289,28 +535,6 @@
         "mainLanguage": null,
         "name": "predatorCage",
         "url": "https://github.com/smthnspcl/predatorCage"
-    },
-    {
-        "description": [
-            "android offline documentation viewer"
-        ],
-        "details": {
-            "languages": [
-                "java"
-            ],
-            "libraries": {
-                "java": [
-                    "com.google.android.material:material:1.1.0",
-                    "com.jakewharton:butterknife:10.2.1",
-                    "com.blankj:utilcodex:1.26.0",
-                    "com.liulishuo.filedownloader:library:1.7.7",
-                    "org.greenrobot:eventbus:3.1.1"
-                ]
-            }
-        },
-        "mainLanguage": "Java",
-        "name": "adocs",
-        "url": "https://github.com/smthnspcl/adocs"
     },
     {
         "description": [
@@ -345,106 +569,6 @@
         "mainLanguage": "Python",
         "name": "pyncddns",
         "url": "https://github.com/smthnspcl/pyncddns"
-    },
-    {
-        "description": [
-            "manage and run mutliple tor containers for multiple selenium instances"
-        ],
-        "details": {
-            "languages": [
-                "python",
-                "shell",
-                "dockerfile"
-            ],
-            "libraries": {
-                "python": [
-                    "stem",
-                    "sanic",
-                    "loguru",
-                    "psutil",
-                    "docker"
-                ]
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "docktor",
-        "url": "https://github.com/smthnspcl/docktor"
-    },
-    {
-        "description": [
-            "duckduckgo python api"
-        ],
-        "details": {
-            "languages": [
-                "python"
-            ],
-            "libraries": {
-                "python": [
-                    "user_agent",
-                    "beautifulsoup4"
-                ]
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "duckpy",
-        "url": "https://github.com/smthnspcl/duckpy"
-    },
-    {
-        "description": [
-            "find jobs on stepstone.de via the cli"
-        ],
-        "details": {
-            "languages": [
-                "python"
-            ],
-            "libraries": {
-                "python": [
-                    "beautifulsoup4",
-                    "requests",
-                    "progressbar2"
-                ]
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "steppy",
-        "url": "https://github.com/smthnspcl/steppy"
-    },
-    {
-        "description": [
-            "threading.Thread wrapper with convenient functions"
-        ],
-        "details": {
-            "languages": [
-                "python"
-            ],
-            "libraries": {
-                "python": []
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "pyrunnable",
-        "url": "https://github.com/smthnspcl/pyrunnable"
-    },
-    {
-        "description": [
-            "write twitter readonly bots without the twitter api"
-        ],
-        "details": {
-            "languages": [
-                "python"
-            ],
-            "libraries": {
-                "python": [
-                    "dataset",
-                    "loguru",
-                    "git+https://github.com/smthnspcl/seleniumwrapper",
-                    "git+https://github.com/WoLpH/python-progressbar"
-                ]
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "pytwitter",
-        "url": "https://github.com/smthnspcl/pytwitter"
     },
     {
         "description": [
@@ -502,43 +626,6 @@
     },
     {
         "description": [
-            "bluetooth scanner w/ a convinient api"
-        ],
-        "details": {
-            "languages": [
-                "python"
-            ],
-            "libraries": {
-                "python": [
-                    "gps",
-                    "bluepy",
-                    "PyBluez",
-                    "gattlib"
-                ]
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "pybt",
-        "url": "https://github.com/smthnspcl/pybt"
-    },
-    {
-        "description": [
-            "easily sync/backup your phone's fs"
-        ],
-        "details": {
-            "languages": [
-                "python"
-            ],
-            "libraries": {
-                "python": []
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "adbSync",
-        "url": "https://github.com/smthnspcl/adbSync"
-    },
-    {
-        "description": [
             "detects if someone is throwing deauthentication frames around"
         ],
         "details": {
@@ -581,37 +668,6 @@
         "mainLanguage": "C++",
         "name": "pwnpi",
         "url": "https://github.com/smthnspcl/pwnpi"
-    },
-    {
-        "description": [
-            "wardriving tool"
-        ],
-        "details": {
-            "languages": [
-                "python",
-                "css",
-                "javascript",
-                "html",
-                "shell"
-            ],
-            "libraries": {
-                "python": [
-                    "gps",
-                    "netifaces",
-                    "scapy",
-                    "loguru",
-                    "dataset",
-                    "jinja2",
-                    "git+https://github.com/smthnspcl/pybt",
-                    "flask",
-                    "spidev",
-                    "Pillow"
-                ]
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "pwnpy",
-        "url": "https://github.com/smthnspcl/pwnpy"
     },
     {
         "description": [
@@ -750,23 +806,6 @@
         "mainLanguage": "Python",
         "name": "informer",
         "url": "https://github.com/smthnspcl/informer"
-    },
-    {
-        "description": [
-            "micropython flash / upload tool"
-        ],
-        "details": {
-            "languages": [
-                "python",
-                "shell"
-            ],
-            "libraries": {
-                "python": []
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "upy_flasher",
-        "url": "https://github.com/smthnspcl/upy_flasher"
     },
     {
         "description": [
@@ -938,25 +977,6 @@
         "mainLanguage": null,
         "name": "cadpi",
         "url": "https://github.com/smthnspcl/cadpi"
-    },
-    {
-        "description": null,
-        "details": {
-            "languages": [
-                "python"
-            ],
-            "libraries": {
-                "python": [
-                    "Jinja2==2.8",
-                    "pymongo==3.6.0",
-                    "redis==2.10.6",
-                    "progressbar2==3.37.1"
-                ]
-            }
-        },
-        "mainLanguage": "Python",
-        "name": "ieee_regauth_csv_to_database",
-        "url": "https://github.com/smthnspcl/ieee_regauth_csv_to_database"
     },
     {
         "description": [
