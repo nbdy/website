@@ -1,6 +1,6 @@
 jinja2
 sanic
-jinja2-sanic
+git+https://github.com/nbdy/jinja2-sanic
 python-dateutil
 requests
 beautifulsoup4
