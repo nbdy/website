@@ -3,7 +3,7 @@ from sanic import Sanic
 from sanic.response import text, redirect
 from dateutil import parser
 from datetime import datetime
-from os.path import isfile
+from os.path import isfile, isdir
 from os import listdir
 import jinja2
 import jinja2_sanic
@@ -107,8 +107,14 @@ class Server(object):
 
         for k in cfg["template"]["apps"].keys():
             _d = "/img/" + cfg["template"]["apps"][k]["name"] + "/"
-            cfg["template"]["apps"][k]["images"] = list({"show": "<img src='%s' class='d-block w-100'>" % (_d + _)}
-                                                        for _ in listdir("static" + _d))
+            img_list = []
+            if not isdir("static" + _d):
+                cfg["template"]["apps"][k]["images"] = list({"show": "<img src='%s' class='d-block w-100'>" %
+                                                             "/img/placeholder.img"})
+                img_list.append("static/img/placeholder.png")
+            else:
+                cfg["template"]["apps"][k]["images"] = list({"show": "<img src='%s' class='d-block w-100'>" % (_d + _)}
+                                                            for _ in listdir("static" + _d))
 
     def run(self):
         self.app.run(a.host, a.port, debug=a.debug)
