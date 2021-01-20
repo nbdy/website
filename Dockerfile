@@ -7,7 +7,8 @@ COPY static /app/static
 COPY templates /app/templates
 COPY srv.py /app/srv.py
 COPY config.json /app/config.json
+WORKDIR /app/
 
 EXPOSE 51337
 
-CMD ["python3", "/app/srv.py", "--host", "0.0.0.0", "-p", "51337", "-c", "/app/config.json"]
+CMD ["python3", "srv.py", "--host", "0.0.0.0", "-p", "51337"]
