@@ -1,4 +1,4 @@
-FROM slim
+FROM python:slim
 RUN mkdir /app
 COPY requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
