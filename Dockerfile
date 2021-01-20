@@ -1,6 +1,6 @@
 FROM python:slim
 RUN mkdir /app
-RUN apt-get update ; apt-get install -y gcc file make
+RUN apt-get update ; apt-get install -y gcc file make git
 COPY requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
 COPY static /app/static
