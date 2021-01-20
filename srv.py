@@ -13,7 +13,7 @@ from random import randint, choices
 
 class Utils(object):
     PATHS = ["~jeff", "cgi-bin", "tmp", "..", "wp-admin", "saucyfiles", "danger", "administration", "root", "images",
-             "~admin", "www", "html", ".git", "wp-content"]
+             "~admin", "www", "html", ".git", "wp-content", "passwd", "shadow", ".git"]
 
     @staticmethod
     def generate_path(depth=4):
@@ -111,10 +111,7 @@ class Server(object):
                                                         for _ in listdir("static" + _d))
 
     def run(self):
-        if a.ssl_key is None and a.ssl_cert is None:
-            self.app.run(a.host, a.port, debug=a.debug)
-        else:
-            self.app.run(a.host, a.port, debug=a.debug, ssl={"cert": a.ssl_cert, "key": a.ssl_key})
+        self.app.run(a.host, a.port, debug=a.debug)
 
 
 if __name__ == '__main__':
@@ -122,8 +119,6 @@ if __name__ == '__main__':
     ap.add_argument("--host", default="127.0.0.1", type=str, help="host address")
     ap.add_argument("-p", "--port", default=8080, type=int, help="host port")
     ap.add_argument("-d", "--debug", action="store_true", help="debug or not")
-    ap.add_argument("-sc", "--ssl-cert", default=None, type=str, help="ssl certificate")
-    ap.add_argument("-sk", "--ssl-key", default=None, type=str, help="ssl key")
     ap.add_argument("-c", "--config", default="config.json", help="configuration file")
     a = ap.parse_args()
     if not isfile(a.config):

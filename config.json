@@ -1,5 +1,5 @@
 {
-  "github_url": "https://github.com/smthnspcl",
+  "github_url": "https://github.com/nbdy",
   "build_server": "https://build.eberlein.io",
   "template": {
     "about": {
@@ -18,9 +18,11 @@
         "Java",
         "Kotlin",
         "Python",
+        "Ruby",
         "JS",
         "HTML",
-        "CSS"
+        "CSS",
+        "Shell"
       ],
       "sdks": [
         "Android",
@@ -33,12 +35,19 @@
         "Android Studio",
         "PyCharm",
         "IntelliJ",
-        "Rider"
+        "Rider",
+        "RubyMine"
       ]
     },
 
     "projects": {
       "languages": {
+        "shell": [
+          {
+            "title": "b2qt",
+            "description": "build a boot2qt image with docker"
+          }
+        ],
         "python": [
           {
             "title": "duckpy",
@@ -114,6 +123,34 @@
           {
             "title": "pdftool",
             "description": "merge pdf files with ease"
+          },
+          {
+            "title": "dhtc",
+            "description": "dht crawler"
+          },
+          {
+            "title": "imgsend",
+            "description": "send images from a device to an api endpoint every x seconds"
+          },
+          {
+            "title": "pyproj",
+            "description": "python project creation utility"
+          },
+          {
+            "title": "pymacgen",
+            "description": "generate mac addresses"
+          },
+          {
+            "title": "pyoui",
+            "description": "lookup oui entries via mac, mac prefix, org name or country code"
+          },
+          {
+            "title": "upy_flasher",
+            "description": "micropython flash / upload tool"
+          },
+          {
+            "title": "pymqttui",
+            "description": "mqtt ui based on flask components"
           }
         ],
         "java": [
@@ -176,12 +213,50 @@
           {
             "title": "raygauge",
             "description": "gauges drawn with raylib / for carpi"
+          },
+          {
+            "title": "modulepp",
+            "description": "cpp11 module framework"
+          },
+          {
+            "title": "pubsupp",
+            "description": "simple cpp publish/subscribe library"
+          },
+          {
+            "title": "ruicf",
+            "description": "raylib ui controls framework"
+          },
+          {
+            "title": "pui",
+            "description": "pinephone ui"
+          },
+          {
+            "title": "disqt",
+            "description": "qt qml redis wrapper"
+          },
+          {
+            "title": "rsettingsqt",
+            "description": "synchronized settings with disqt"
           }
         ],
         "kotlin": [
           {
             "title": "productEvaluation",
             "description": "rating app for all products that have a barcode"
+          },
+          {
+            "title": "oui",
+            "description": "oui/mac vendor lookup"
+          },
+          {
+            "title": "android_btinformer",
+            "description": "tells you when a btle device with certain characteristics is nearby"
+          }
+        ],
+        "ruby": [
+          {
+            "title": "niceghost",
+            "description": "kvm manager"
           }
         ]
       }
@@ -191,27 +266,57 @@
       "productEvaluation": {
         "name": "productEvaluation",
         "description": "used for rating different products in their category. written in kotlin. uses paperdb, splitties, fotoapparat and zxing.",
-        "dl": "https://build.eberlein.io/job/android_productevaluation/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+        "dl": "https://build.eberlein.io/view/android/job/android_productevaluation/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
+      },
+      "baconEvaluation": {
+        "name": "baconEvalutation",
+        "description": "used for rating bacon, same concept as productEvaluation",
+        "dl": "https://build.eberlein.io/view/android/job/android_baconevaluation/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
       },
       "adocs": {
         "name": "adocs",
         "description": "download and view the android documentation. also has a favoring function.",
-        "dl": "https://build.eberlein.io/job/android_adocs/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+        "dl": "https://build.eberlein.io/view/android/job/android_adocs/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
       },
       "contacts": {
         "name": "contacts",
         "description": "contacts app which is able to encrypt its database, import from multiple sources and sync over bluetooth.",
-        "dl": "https://build.eberlein.io/job/android_contacts/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+        "dl": "https://build.eberlein.io/view/android/job/android_contacts/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
       },
       "debt": {
         "name": "debt",
         "description": "track the your/their debt of people around you. supports multiple currencies.",
-        "dl": "https://build.eberlein.io/job/android_debt/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+        "dl": "https://build.eberlein.io/view/android/job/android_debt/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
       },
       "apyide": {
         "name": "apyide",
         "description": "editor with code styling features",
-        "dl": "https://build.eberlein.io/job/android_apyide/lastSuccessfulBuild/artifact/SignApksBuilder-out/android/key0/app-release-unsigned.apk/app-release.apk"
+        "dl": "https://build.eberlein.io/view/android/job/android_apyide/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
+      },
+      "btinformer": {
+        "name": "btinformer",
+        "description": "tells you when a btle device with certain characteristics is nearby",
+        "dl": "https://build.eberlein.io/view/android/job/android_btinformer/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
+      },
+      "autobeer": {
+        "name": "autobeer",
+        "description": "utility app for beerwithme, automatically responds to your friends when they drink a beverage",
+        "dl": "https://build.eberlein.io/view/android/job/android_autobeer/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
+      },
+      "bluepwn": {
+        "name": "bluepwn",
+        "description": "wardriving/warwalking app for bluetooth",
+        "dl": "https://build.eberlein.io/view/android/job/android_bluepwn/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
+      },
+      "contactsync": {
+        "name": "contactsync",
+        "description": "sync your contacts with another phone via bluetooth",
+        "dl": "https://build.eberlein.io/view/android/job/android_contactsync/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
+      },
+      "shopping": {
+        "name": "shopping",
+        "description": "make shopping lists for different markets",
+        "dl": "https://build.eberlein.io/view/android/job/android_shopping/lastSuccessfulBuild/artifact/app/build/outputs/apk/release/app-release-unsigned.apk"
       }
     }
   }
