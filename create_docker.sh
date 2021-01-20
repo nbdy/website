@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build -t website_eberlein -f docker/Dockerfile
+docker build -t website -f Dockerfile
