@@ -10,4 +10,4 @@ COPY config.json /app/config.json
 
 EXPOSE 51337
 
-CMD ["python3", "/app/srv.py", "--host", "0.0.0.0", "-p", "51337"]
+CMD ["python3", "/app/srv.py", "--host", "0.0.0.0", "-p", "51337", "-c", "/app/config.json"]
